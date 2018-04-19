@@ -235,6 +235,12 @@ def run_test_number_of_stutters():
 
 
 def number_of_stutters(s):
+    n = 0
+    for k in range(1, len(s)):
+        if s[k-1] == s[k]:
+            n = n + 1
+    return n
+
     """
     What comes in:
       -- a string s
@@ -252,7 +258,7 @@ def number_of_stutters(s):
        :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -297,6 +303,16 @@ def run_test_is_palindrome():
 
 
 def is_palindrome(s):
+    seq = []
+    n = 0
+    for k in range(len(s)):
+        seq.append(s[len(s)-1-k])
+    for k in range(len(s)):
+        if s[k] == seq[k]:
+            n = n+1
+    if n == len(s):
+        return True
+    return False
     """
     What comes in:
       -- a string s that (in this simple version of the palindrome
@@ -325,7 +341,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -364,6 +380,11 @@ def run_test_count_same():
 
 
 def count_same(sequence1, sequence2):
+    n = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            n = n + 1
+    return n
     """
     What comes in:
       -- two sequences that have the same length
@@ -392,7 +413,7 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
