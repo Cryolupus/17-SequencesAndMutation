@@ -10,8 +10,8 @@ for ITERATING through SEQUENCES, including selections from:
   -- Looking at two sequences in parallel
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Kevin Chou.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -78,6 +78,15 @@ def run_test_shortest_string():
 
 
 def shortest_string(strings):
+    seq = []
+    length = 100
+    for k in range(len(strings)):
+        if length > len(strings[k]):
+            length = len(strings[k])
+            seq = strings[k]
+    return seq
+
+
     """
     What comes in:
       -- a non-empty sequence of strings
@@ -103,7 +112,7 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -149,6 +158,14 @@ def run_test_index_of_largest_number():
 
 
 def index_of_largest_number(numbers, n):
+    seq = numbers[0]
+    a = 0
+    for k in range(n):
+        if numbers[k] > seq:
+            seq = numbers[k]
+            a = k
+    return a
+
     """
     What comes in:
       -- a sequence of numbers
@@ -180,7 +197,7 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
